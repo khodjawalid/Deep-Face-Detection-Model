@@ -1,51 +1,45 @@
-Détection de Visages avec Apprentissage Profond
+## Détection de Visages avec Apprentissage Profond
 
-Présentation
+### Présentation
 
 Ce projet met en œuvre un système de détection de visages basé sur un réseau de neurones convolutif (CNN). Il utilise TensorFlow pour l'entraînement, OpenCV pour le traitement d'image et Albumentations pour l'augmentation des données.
 
-Prérequis
+### Pipeline du Projet
 
-Avant d'exécuter le projet, installez les dépendances requises :
+#### 1. Acquisition et Annotation des Données
 
-pip install labelme tensorflow opencv-python matplotlib albumentations
+- Capture d'un ensemble d'images contenant des visages.
 
-Pipeline du Projet
+- Annotation des visages à l'aide de l'outil LabelMe pour générer des boîtes englobantes.
 
-1. Acquisition et Annotation des Données
+#### 2. Prétraitement des Données
 
-Capture d'un ensemble d'images contenant des visages.
+- Conversion des annotations en un format compatible avec l'entraînement.
 
-Annotation des visages à l'aide de l'outil LabelMe pour générer des boîtes englobantes.
+- Application de techniques d'augmentation des données (rotation, mise à l'échelle, symétrie, ajustement de luminosité) avec Albumentations.
 
-2. Prétraitement des Données
+#### 3. Architecture du Modèle
 
-Conversion des annotations en un format compatible avec l'entraînement.
+- Implémentation d'un modèle de détection basé sur un réseau de neurones convolutif (CNN) avec TensorFlow.
 
-Application de techniques d'augmentation des données (rotation, mise à l'échelle, symétrie, ajustement de luminosité) avec Albumentations.
+- Possibilité d'utiliser un modèle pré-entraîné pour améliorer la performance (transfer learning).
 
-3. Architecture du Modèle
+- Optimisation avec des fonctions d'activation et une fonction de coût adaptées.
 
-Implémentation d'un modèle de détection basé sur un réseau de neurones convolutif (CNN) avec TensorFlow.
+#### 4. Entraînement et Évaluation
 
-Possibilité d'utiliser un modèle pré-entraîné pour améliorer la performance (transfer learning).
+- Entraînement du modèle sur les données annotées.
 
-Optimisation avec des fonctions d'activation et une fonction de coût adaptées.
+- Suivi des performances avec les métriques de perte et d'exactitude.
 
-4. Entraînement et Évaluation
+- Validation sur un ensemble de test pour évaluer la capacité de généralisation.
 
-Entraînement du modèle sur les données annotées.
+#### 5. Détection de Visages en Temps Réel
 
-Suivi des performances avec les métriques de perte et d'exactitude.
+- Utilisation du modèle entraîné pour la détection de visages sur des flux vidéo en direct.
 
-Validation sur un ensemble de test pour évaluer la capacité de généralisation.
+- Exploitation d'OpenCV pour la capture et le traitement des images en temps réel.
 
-5. Détection de Visages en Temps Réel
-
-Utilisation du modèle entraîné pour la détection de visages sur des flux vidéo en direct.
-
-Exploitation d'OpenCV pour la capture et le traitement des images en temps réel.
-
-Utilisation
+### Utilisation
 
 Suivez les étapes du notebook pour entraîner et tester le modèle. Adaptez les paramètres selon vos besoins pour améliorer les performances.
